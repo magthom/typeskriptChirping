@@ -4,19 +4,25 @@ import Home from './views/Home';
 import Details from './views/Details';
 import Admin from './views/Admin';
 import Compose from './views/Compose';
+import Navbar from './components/Navbar';
 
 const App: React.FC<AppProps> = () => {
 	return (
 		<BrowserRouter>
+		<Navbar />
 			<Switch>
-				<Route exact path ="/"></Route>
+				<Route exact path ="/">
 					<Home />
-				<Route exact path="/details/:id"></Route>
+				</Route>
+				<Route exact path="/details/:id">
 					<Details />
-				<Route exact path="/admin/:id"></Route>
+				</Route>
+				<Route exact path="/admin/:id">
 					<Admin />
-				<Route exact path="/compose"></Route>
+				</Route>
+				<Route exact path="/compose">
 					<Compose />
+				</Route>
 			</Switch>
 		</BrowserRouter>
 	);
